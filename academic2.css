@@ -41,13 +41,13 @@ font-size:30px;
 }
 
 #bigbox{
-width:1250px;
+width:1200px;
 height:670px;
 background-color:white;
 }
 
 #imagebox{
-width:350px;
+width:350;
 height:600px;
 background-color:white;
 float:left;
@@ -119,7 +119,7 @@ float:left;
 }
 
 .aboutpara2{
-width:500px;
+width:620px;
 height:495px;
 background-color:white;
 float:left;
