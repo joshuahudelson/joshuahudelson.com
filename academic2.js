@@ -24,11 +24,8 @@ $(document).ready(function(){
 	$("#cvbox").fadeOut('fast');
 	$("#contactbox").fadeOut('fast');
 	});
-    $("#navcontact").click(function(){
-	$(".box").hide();
-	$("#contactbox").fadeIn('fast');
-	$("#aboutbox").fadeOut('fast');
-	$("#cvbox").fadeOut('fast');
+    $("#navportfolio").click(function(){
+      window.location.replace("http://joshuahudelson.com/portfolio.html")
 	});
     $("#educationbox").show();
     $("#educationheader").click(function(){
