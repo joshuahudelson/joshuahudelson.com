@@ -61,11 +61,11 @@
         </div>
       </div>
     <div class="subholder">
-      <div id="Shiftshaper" style="width:560px;height:180px;float:right;margin:14 -1111 14 14;border-width:0px;border-style: solid;border-color:black; position:relative">
+      <div id="sculpture" style="width:560px;height:180px;float:right;margin:14 -1111 14 14;border-width:0px;border-style: solid;border-color:black; position:relative">
         <img src="Materials/sculpture_image2.png" class="menuimage">
         <div class="overlay">
           <div class="overlay-text">
-              Shiftshaper
+              Sculpture
           </div>
         </div>
         </div>
@@ -74,11 +74,11 @@
 
   <div class="holder">
     <div class="subholder">
-      <div id="sculpture" style="width:700px;height:180px;float:left;margin:14 14 14 -1111;border-width:1px;border-style: solid;border-color:black; position:relative">
+      <div id="Shiftshaper" style="width:700px;height:180px;float:left;margin:14 14 14 -1111;border-width:1px;border-style: solid;border-color:black; position:relative">
         <img src="Materials/shiftshaperfullgifcropped.gif" class="menuimage" width="700" style="filter:invert(100%)">
         <div class="overlay">
           <div class="overlay-text">
-              Sound Sculpture
+              Shiftshaper
           </div>
         </div>
         </div>
@@ -131,9 +131,6 @@
 
       <div style="width:1240;height:200px;margin-left:-220;text-align:center">
         <img width="210px" src="Materials/waveform1.png" style="float:left;margin-left:50;margin-right:50px;border:1px solid gray">
-        <img width="210px" src="Materials/waveform2.png" style="float:left;margin-left:50px;margin-right:50;border:1px solid gray">
-        <img width="210px" src="Materials/waveform3.png" style="float:left;margin-left:50px;margin-right:50;border:1px solid gray">
-        <img width="210px" src="Materials/waveform4.png" style="float:left;margin-left:50px;border:1px solid gray">
         </div>
 
       <div style="text-align:center">
@@ -173,7 +170,6 @@
 <!--     SHIFTSHAPER -->
 
 
-
     <div id="shiftshaperpage" style="background-color:White;width:840px;margin:auto;line-height:1.95;font-size:20;font-weight:bold;text-align:justify;font-family:myfont">
 
       <div id="backbutton">
@@ -181,64 +177,59 @@
       </div>
 
       <div id="myheader" style="font-size:28;text-align:left;font-weight:bold;margin-top:120px;margin-bottom:20px">
-        <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Statfeed~ &nbsp/&nbsp  Shiftshaper</b>
+        <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp sixteen_bit_shift_register~ &nbsp/&nbsp  Shiftshaper</b>
         </div>
 
-          Statfeed~ is an audio-rate implementation of the Statistical Feedback heuristic
-          for Pure Data.  The user specifies the number elements (representing
-          evenly-spaced sample values between -1 and 1) to choose from, and an exponent.
-          The larger the exponent, the lower the probability that a recently-chosen
-          element will be used again before all of the others are used.
+        The shift_register_sixteen_bit object is a virtual audio-rate shift
+        register for Pure Data.  The object truncates incoming signal values to
+        1s or 0s and then outputs DSP blocks of those values as they are
+        bit-shifted across 16 1-bit taps.  The object's instantaneous state can
+        be defined by with an integer (which the object converys to a 16-bit
+        binary reperesentation).  A "unit impulse" in the left-most bit, for
+        example, can be created by entering the number 32768.
 
-      <img src="Materials/sfobject.png" style="float:right;height:105;padding:5px;margin-right:0px;margin-right:-90;background-color:White">
+        <img src="Materials/Shiftshaper/pd_object.png" style="float:right;height:52;padding:20px;margin-right:0px;margin-right:-90;background-color:White">
 
-          When driven by white noise, the object operates in the "statistical" manner
-          (as described by Barnett, Polansky, and Winter).  Driven by non-random audio
-          sources, however, it produces different results.  I have been particularly
-          interested in feeding the audio output back in as a driver.  The input
-          parameters continue to produce similar qualities of effect (tone vs. noise,
-          frequency) if not the same kind of control.  The following are sample waveforms
-          from my experiments:
+        Sending output signals through audio-rate XOR gates (using Pure Data's
+        [expr~] object) and then feeding the resultant signal back into the
+        register's input creates the equivalent of a linear-feedback shift
+        register.
 
-        <br>
-        <br>
+        Whereas linear-feedback shift registers have typically been used to
+        generate pseudo-random numbers, it is more interesting (for sonic
+        purposes) to select tap/gate arrangements that generate more periodic
+        (and therefore tonal) sequences.
 
-        <div style="width:1240;height:200px;margin-left:-220;text-align:center">
-          <img width="210px" src="Materials/waveform1.png" style="float:left;margin-left:50;margin-right:50px;border:1px solid gray">
-          <img width="210px" src="Materials/waveform2.png" style="float:left;margin-left:50px;margin-right:50;border:1px solid gray">
-          <img width="210px" src="Materials/waveform3.png" style="float:left;margin-left:50px;margin-right:50;border:1px solid gray">
-          <img width="210px" src="Materials/waveform4.png" style="float:left;margin-left:50px;border:1px solid gray">
-          </div>
+<!--        <div style="width:1240;height:200px;margin-left:-220;text-align:center"> -->
+          <img src="Materials/Shiftshaper/waveform1.png" style="float:right;width:700px;margin-right: -200px;border:0px solid gray;padding:25px">
+        <!--  </div> -->
 
-        <div style="text-align:center">
-        &nbsp
-          </div>
 
-        Statfeeder is a Pure Data patch that employs three Statfeed~ objects for
-        performance, recording, and experimentation.  The three objects can be driven
-        with any combination of white noise, constant-value audio signals, and their own
-        outputs.
 
-        <img src="Materials/main_interface.png" style="float:left;width:690px;padding:20px;margin-left:-100">
+          Shiftshaper is a Pure Data patch build to explore the sonic consequences
+          of using audio-rate, linear-feedback shift registers.  Two units, each
+          consisting of three shift registers separated by delay lines, allow a
+          wide range of register lengths, tap locations, and gate combinations.
 
-        Presets feature the range of textures and timbres possible, and two interfaces
-        (rhythm and transition) use a message-rate version of the object to switch
-        between presets.  I have also designed a simple waveform visualizer in GEM that
-        designates a circular oscilloscope to each Statfeed~ object.  The patterns
-        emanating from each scope come directly from the sample values generated by the
-        object.  In general, noise and high frequencies tend to appear as misty halos,
-        while steady tones and low frequencies tend to appear as geometric patterns.
+          <img src="Materials/Shiftshaper/main_interface.png" style="float:left;width:850px;padding:20px;margin-left:-200">
+
+
+          Shiftshaper is a Pure Data patch build to explore the sonic consequences
+          of using audio-rate, linear-feedback shift registers.  Two units, each
+          consisting of three shift registers separated by delay lines, allow a
+          wide range of register lengths, tap locations, and gate combinations.
+
 
         <br>
 
       <div>
-        <iframe src="https://player.vimeo.com/video/323806154" width="80%"
+        <iframe src="https://player.vimeo.com/video/324779130" width="80%"
           style="margin-left:10%" height="600" frameborder="0"
           webkitallowfullscreen mozallowfullscreen allowfullscreen>
           </iframe>
           </div>
 
-        An introduction to the Statistical Feedback algorithm and its applications for sound and music can be found <u>here</u>.
+        An introduction to linear-feedback shift registers for sound and music can be found <u>here</u>.
 
       </div>
 
