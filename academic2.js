@@ -1,4 +1,19 @@
 $(document).ready(function(){
+
+  $("#navabout").hover(function(){
+    $(this).css('cursor','pointer');
+  })
+  $("#navcv").hover(function(){
+    $(this).css('cursor','pointer');
+  })
+  $("#navportfolio").hover(function(){
+    $(this).css('cursor','pointer');
+  })
+
+  $('.cvheader').hover(function(){
+    $(this).css('cursor','pointer');
+  })
+
     $(".box").hide('fastest');
     $("#cvbox").hide('fastest');
     $("#contactbox").hide('fastest');

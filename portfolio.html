@@ -42,7 +42,7 @@
         <img src="Materials/SilencerPreview.gif" class="menuimage" style="width:100%;height:100%;opacity:0.9">
         <div class="overlay">
           <div class="overlay-text">
-              Silencer
+              Quiet Takes
           </div>
         </div>
         </div>
@@ -51,8 +51,8 @@
 
   <div class="holder">
     <div class="subholder">
-      <div id="IATF" style="width:420px;height:180px;float:left;margin:14 14 14 -1111;border-width:0px;border-style: solid;border-color:black; position:relative">
-        <img src="Materials/IATF_image3.png" class="menuimage">
+      <div id="IATF" style="width:420px;height:180px;float:left;margin:14 14 14 -1111;border-width:1px;border-style: solid;border-color:blue; position:relative">
+        <img src="Materials/IATF_image4.png" class="menuimage">
         <div class="overlay">
           <div class="overlay-text">
               IATF
@@ -65,7 +65,7 @@
         <img src="Materials/sculpture_image2.png" class="menuimage">
         <div class="overlay">
           <div class="overlay-text">
-              Sculpture
+              Antennae
           </div>
         </div>
         </div>
@@ -102,7 +102,7 @@
 
   <div id="statfeedpage" style="background-color:White;width:840px;margin:auto;line-height:1.95;font-size:20;font-weight:bold;text-align:justify;font-family:myfont">
 
-    <div id="backbutton">
+    <div class="backbutton">
       <b> << </b>
     </div>
 
@@ -110,27 +110,34 @@
       <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Statfeed~ &nbsp/&nbsp  Statfeeder</b>
       </div>
 
-        Statfeed~ is an audio-rate implementation of the Statistical Feedback heuristic
-        for Pure Data.  The user specifies the number elements (representing
-        evenly-spaced sample values between -1 and 1) to choose from, and an exponent.
-        The larger the exponent, the lower the probability that a recently-chosen
-        element will be used again before all of the others are used.
+        Statfeed~ is an audio-rate implementation of the Statistical Feedback
+        heuristic for Pure Data.  The user specifies the number elements
+        (representing evenly-spaced, digital sample amplitudes between -1 and 1)
+        to choose from, and an exponent. The larger the exponent, the lower the
+        probability that a recently-chosen element will be used again before all
+        of the others have been chosen.
 
     <img src="Materials/sfobject.png" style="float:right;height:105;padding:5px;margin-right:0px;margin-right:-90;background-color:White">
 
-        When driven by white noise, the object operates in the "statistical" manner
-        (as described by Barnett, Polansky, and Winter).  Driven by non-random audio
-        sources, however, it produces different results.  I have been particularly
-        interested in feeding the audio output back in as a driver.  The input
-        parameters continue to produce similar qualities of effect (tone vs. noise,
-        frequency) if not the same kind of control.  The following are sample waveforms
-        from my experiments:
+        When driven by white noise, the object operates in the typical
+        manner (as described by
+        <a href="https://gauss.dartmouth.edu/~ahb/papers/dc.pdf">Barnett,
+        Polansky, and Winter</a>).
+        Driven by non-random audio sources, however, it produces different
+        results.  I have been particularly interested in feeding the audio
+        output back in as a driver.  The input parameters continue to produce
+        similar qualities of effect (tone vs. noise, frequency) if not the same
+        kind of control.  The following are sample waveforms from my
+        experiments:
 
       <br>
       <br>
 
-      <div style="width:1240;height:200px;margin-left:-220;text-align:center">
+      <div style="width:1250;height:200px;margin-left:-225;text-align:center">
         <img width="210px" src="Materials/waveform1.png" style="float:left;margin-left:50;margin-right:50px;border:1px solid gray">
+        <img width="210px" src="Materials/waveform2.png" style="float:left;margin-left:50;margin-right:50px;border:1px solid gray">
+        <img width="210px" src="Materials/waveform3.png" style="float:left;margin-left:50;margin-right:50px;border:1px solid gray">
+        <img width="210px" src="Materials/waveform4.png" style="float:left;margin-left:50;margin-right:50px;border:1px solid gray">
         </div>
 
       <div style="text-align:center">
@@ -138,19 +145,21 @@
         </div>
 
       Statfeeder is a Pure Data patch that employs three Statfeed~ objects for
-      performance, recording, and experimentation.  The three objects can be driven
-      with any combination of white noise, constant-value audio signals, and their own
-      outputs.
+      performance, recording, and experimentation.  The three objects can be
+      driven with any combination of white noise, constant-value audio signals,
+      and their own outputs.
 
       <img src="Materials/main_interface.png" style="float:left;width:690px;padding:20px;margin-left:-100">
 
-      Presets feature the range of textures and timbres possible, and two interfaces
-      (rhythm and transition) use a message-rate version of the object to switch
-      between presets.  I have also designed a simple waveform visualizer in GEM that
-      designates a circular oscilloscope to each Statfeed~ object.  The patterns
-      emanating from each scope come directly from the sample values generated by the
-      object.  In general, noise and high frequencies tend to appear as misty halos,
-      while steady tones and low frequencies tend to appear as geometric patterns.
+      Presets feature the range of textures and timbres possible, and two
+      interfaces (rhythms and transition) use a message-rate
+      statfeed objects to switch between presets.  I have also designed a
+      waveform visualizer in GEM that designates a circular oscilloscope to each
+      Statfeed~ object.  The patterns emanating from each scope come directly
+      from the sample values generated.  In general, noise and
+      high frequencies tend to appear as misty halos, while steady tones and low
+      frequencies tend to appear as geometric patterns.  See the video below
+      for examples.
 
       <br>
 
@@ -161,7 +170,12 @@
         </iframe>
         </div>
 
-      An introduction to the Statistical Feedback algorithm and its applications for sound and music can be found <u>here</u>.
+        <br>
+        <br>
+        You can find the current code for this project <a href="https://github.com/joshuahudelson/Statfeeder">here</a>
+        and <a href="https://github.com/joshuahudelson/statfeed">here</a>.
+        <br>
+        <br>
 
     </div>
 
@@ -172,53 +186,44 @@
 
     <div id="shiftshaperpage" style="background-color:White;width:840px;margin:auto;line-height:1.95;font-size:20;font-weight:bold;text-align:justify;font-family:myfont">
 
-      <div id="backbutton">
+      <div class="backbutton">
         <b> << </b>
       </div>
 
       <div id="myheader" style="font-size:28;text-align:left;font-weight:bold;margin-top:120px;margin-bottom:20px">
-        <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp sixteen_bit_shift_register~ &nbsp/&nbsp  Shiftshaper</b>
+        <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp shift_register_sixteen_bit~ &nbsp/&nbsp  Shiftshaper</b>
         </div>
 
         The shift_register_sixteen_bit object is a virtual audio-rate shift
         register for Pure Data.  The object truncates incoming signal values to
-        1s or 0s and then outputs DSP blocks of those values as they are
-        bit-shifted across 16 1-bit taps.  The object's instantaneous state can
+        1s and 0s and then outputs DSP blocks of those values as they are
+        bit-shifted across 16 1-bit taps.
+
+        <img src="Materials/Shiftshaper/pd_object.png" style="float:right;height:52;padding-left:40px;padding-top: 10px;margin-right:0px;margin-right:-100;background-color:White">
+
+        The object's instantaneous state can
         be defined by with an integer (which the object converys to a 16-bit
-        binary reperesentation).  A "unit impulse" in the left-most bit, for
-        example, can be created by entering the number 32768.
+        binary number).
+        Sending the output signals from different taps through audio-rate XOR
+        gates (using Pure Data's [expr~] object) and then feeding the resultant
+        signal back into the register's input creates the equivalent of a
+        linear-feedback shift register.
 
-        <img src="Materials/Shiftshaper/pd_object.png" style="float:right;height:52;padding:20px;margin-right:0px;margin-right:-90;background-color:White">
-
-        Sending output signals through audio-rate XOR gates (using Pure Data's
-        [expr~] object) and then feeding the resultant signal back into the
-        register's input creates the equivalent of a linear-feedback shift
-        register.
+        <img src="Materials/Shiftshaper/waveform1.png" style="float:left;width:700px;margin-left: -200px;border:0px solid gray;padding:25px">
 
         Whereas linear-feedback shift registers have typically been used to
         generate pseudo-random numbers, it is more interesting (for sonic
         purposes) to select tap/gate arrangements that generate more periodic
         (and therefore tonal) sequences.
+        Shiftshaper is a Pure Data patch for exploring the sonic possibilities
+        of audio-rate, linear-feedback shift registers.
 
-<!--        <div style="width:1240;height:200px;margin-left:-220;text-align:center"> -->
-          <img src="Materials/Shiftshaper/waveform1.png" style="float:right;width:700px;margin-right: -200px;border:0px solid gray;padding:25px">
-        <!--  </div> -->
+        <img src="Materials/Shiftshaper/main_interface.png" style="float:right;width:850px;padding:20px;margin-right:-200">
 
-
-
-          Shiftshaper is a Pure Data patch build to explore the sonic consequences
-          of using audio-rate, linear-feedback shift registers.  Two units, each
-          consisting of three shift registers separated by delay lines, allow a
-          wide range of register lengths, tap locations, and gate combinations.
-
-          <img src="Materials/Shiftshaper/main_interface.png" style="float:left;width:850px;padding:20px;margin-left:-200">
-
-
-          Shiftshaper is a Pure Data patch build to explore the sonic consequences
-          of using audio-rate, linear-feedback shift registers.  Two units, each
-          consisting of three shift registers separated by delay lines, allow a
-          wide range of register lengths, tap locations, and gate combinations.
-
+        Two units, each
+        consisting of three shift registers separated by variable-length delay
+        lines, allow a wide range of register lengths, tap locations, and gate
+        combinations.  See the video below for examples.
 
         <br>
 
@@ -229,11 +234,195 @@
           </iframe>
           </div>
 
-        An introduction to linear-feedback shift registers for sound and music can be found <u>here</u>.
+          <br>
+          <br>
+          You can find the current code for this project <a href="https://github.com/joshuahudelson/Shiftshaper">here</a>
+          and <a href="https://github.com/joshuahudelson/shift_register_sixteen_bit">here</a>.
+          <br>
 
       </div>
 
+<!----------------------------------------------------------------------------->
+<!--     QUIET TAKES -->
 
+
+  <div id="QuietTakesPage" style="background-color:White;width:840px;margin:auto;line-height:1.95;font-size:20;font-weight:bold;text-align:justify;font-family:myfont">
+
+  <div class="backbutton">
+  <b> << </b>
+  </div>
+
+  <div id="myheader" style="font-size:28;text-align:left;font-weight:bold;margin-top:120px;margin-bottom:20px">
+  <b style="text-align:center">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Quiet Takes</b>
+  </div>
+
+  Quiet Takes is a project oriented around the role of silence in
+  the history of film.
+  <br>
+  <br>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  &nbsp <i>What would a film be if it were only
+  its quiet parts?</i>
+  <br>
+  <br>
+  Speech and nondiegetic music do the lion's share of the work in a
+  film, compelling the narrative forward and tying together
+  disparate moments in time.  Meanwhile, periods of relative quiet
+  tend to fall to the extremes of meaninglessness or
+  profundity.  Quiet Takes explores what happens when a film
+  is truncated to these two kinds of scenes.
+  <br>
+  <br>
+  The first film I've analyzed with this process is Ingmar
+  Bergman's 1951 film <i>The Silence</i>.  See the video below for a short clip
+  from the result.
+  <br>
+  <br>
+  <div>
+    <iframe src="https://player.vimeo.com/video/325230586" width="80%"
+      style="margin-left:10%" height="500" frameborder="0"
+      webkitallowfullscreen mozallowfullscreen allowfullscreen>
+      </iframe>
+      </div>
+
+  <br>
+  The entire process of analysis and resynthesis was automated.
+  First, a program written in Python analyzed the film's soundtrack
+  using a recursive windowing and RMS-comparison algorithm.
+  Then a Pure Data patch using GEM replayed and recorded the list of
+  silent segments, three at a time,
+  allowing for smooth crossfading between scenes and sounds.
+  <br>
+  <br>
+  You can find the current code for this project <a href="https://github.com/joshuahudelson/Silencer">here</a>
+  <br>
+  <br>
+
+
+  </div>
+
+  <!----------------------------------------------------------------------------->
+  <!--    FINITE TYPE -->
+
+  <div id="FiniteTypepage" style="background-color:White;width:840px;margin:auto;line-height:1.95;font-size:20;font-weight:bold;text-align:justify;font-family:myfont">
+
+    <div class="backbutton">
+      <b> << </b>
+    </div>
+
+    <div id="myheader" style="font-size:28;text-align:left;font-weight:bold;margin-top:120px;margin-bottom:20px">
+      <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Finite Type</b>
+      </div>
+
+      Finite Type is an in-development system for musical performance using
+      cryptographic attacks on keystroke dynamics and acoustics.  The
+      performer provides a text file from which the program calculates a
+      table of transition probabilities.  Then, as the user types on the
+      keyboard, the system builds a Hidden Markov Model of the user's typing
+      patterns (based off the time intervals between keystrokes) and
+      generates guesses about what the performer has typed.
+      <img src="Materials/Finite_Type/Finite_Type_image.png"
+      style="float:right;height:75;padding:15px;margin:auto;background-color:White">
+      <br>
+      <br>
+      My long-term
+      goal is to combine this system with timbre classification to create an
+      instrument that can be played by modulating both the rhythmic and sonorous
+      aspects one's typing technique.
+      <br>
+      <br>
+      My work was inspired by recent research into biometrics and
+      cryptography.  A paper on deciphering messages through keystroke
+      dynamics can be found <a href="http://www.ouah.org/ssh-timing.pdf">here</a>.
+      Two papers on deciphering messages
+      through acoustic keyboard emanations can be found <a href="https://ieeexplore.ieee.org/document/1301311">here</a> and <a href="https://www.cs.cornell.edu/~shmat/courses/cs6431/zhuang.pdf">here</a>.
+      <br>
+      <br>
+      You can find the current code for this project <a href="https://github.com/joshuahudelson/Finite_Type">here</a>
+      <br>
+      <br>
+    </div>
+
+
+<!----------------------------------------------------------------------------->
+<!--    ANTENNAE -->
+
+  <div id="Antennaepage" style="background-color:White;width:840px;margin:auto;line-height:1.95;font-size:20;font-weight:bold;text-align:justify;font-family:myfont">
+
+    <div class="backbutton">
+      <b> << </b>
+    </div>
+
+    <div id="myheader" style="font-size:28;text-align:left;font-weight:bold;margin-top:120px;margin-bottom:20px">
+      <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Antennae</b>
+      </div>
+
+      Antennae is a sculpture project in which unearthed tools, fragments of
+      metal, and other objects are connected in a feedback
+      oscillator circuit.
+
+      <img src="Materials/Antennae/Antenna1.png"
+      style="float:right;height:600;padding-left:25px;background-color:White">
+
+      <br>
+      <br>
+      In <i>Antenna 1</i>, two trowels serve as the
+      conductive plates of a capacitor, while a window-sash weight serves as
+      the core of an inductor.  These components are integrated, via the
+      amplifier circuit on the back, into a Wien-Bridge oscillator.
+      <br>
+      <br>
+      I began the project after conducting ethnographic fieldwork on
+      Electronic Voice Phenomenon in the United States.  I was inspired by the
+      experiments my informants made using combinations of electrical equipment
+      and sentimental objects to channel the otherworldly.  Future sculptures
+      will use different circuits and feedback topologies with the long-term
+      goal of producing a small ecosystem of whose members are sensitive to one
+      another as well as fluctuations in the ambient radioscape.
+      <br>
+      <img src="Materials/Antennae/Antenna2.jpg"
+      style="float:center;height:220;margin-left:160px;margin-top:25px;background-color:White">
+      <br>
+    </div>
+
+<!----------------------------------------------------------------------------->
+<!--    IATF -->
+
+  <div id="IATFpage" style="background-color:White;width:840px;margin:auto;line-height:1.95;font-size:20;font-weight:bold;text-align:justify;font-family:myfont">
+
+    <div class="backbutton">
+      <b> << </b>
+    </div>
+
+    <div id="myheader" style="font-size:28;text-align:left;font-weight:bold;margin-top:120px;margin-bottom:20px">
+      <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Iteravely Adjusted Transfer Functions (IATF)</b>
+      </div>
+
+      IATF builds on my interest in what results from using the (scaled)
+      output of the Statistical Feedback heuristic as its own driver (in other
+      words: fed-back statistical feedback).  I wrote an implementation of
+      the heuristic in python and then built a system around it to generate
+      output from different numbers of elements and exponents.  The output is
+      collected and analyzed, and the results are displayed in an interactive
+      panel built with Tkinter.
+
+      <img src="Materials/IATF/IATF_image.png"
+      style="float:right;height:350;padding-left:50px;padding-top:15px;padding-bottom:15px;margin:auto;background-color:White">
+
+      Of central interest is how the input parameters effect which unique
+      "loops" (repeating sequences of states) the system arrives at.  As one
+      would expect, the larger the number of elements, the greater the number
+      of possible loops.  But I also hope to show that certain contours of
+      starting state arrive at distinct kinds of loops.
+      <br>
+      <br>
+      You can find the current code for this project <a href="https://github.com/joshuahudelson/IATF">here</a>
+      <br>
+      <br>
+    </div>
+
+
+<!-- -------------------------------------------------------------------------->
 
       <br>
       <br>
@@ -242,10 +431,7 @@
       <div id="signature">
         <b>Joshua Hudelson &nbsp / &nbsp Portfolio </b>
         </div>
-
-
 </div>
-
 
 </body>
 </html>
