@@ -41,14 +41,12 @@ $(document).ready(function(){
   }, 1000);
   });
 
-  $(".backbutton").hover(function(){
-    $(this).css('cursor', 'pointer');
+  $("#signature").click(function(){
+    fade_pages_out("slow");
+    setTimeout(function(){
+    window.location.replace("http://joshuahudelson.com/");
+  }, 1000);
   })
-
-  $(".holder").hover(function(){
-    $(this).css('cursor', 'pointer');
-  })
-
 
   $("#statfeed").click(function(){
     blowup();
@@ -83,4 +81,17 @@ $(document).ready(function(){
   $("#BELLA").click(function(){
     window.open("https://bellagames.org/");
   });
+
+  $(".backbutton").hover(function(){
+    $(this).css('cursor', 'pointer');
+  })
+
+  $(".holder").hover(function(){
+    $(this).css('cursor', 'pointer');
+  })
+
+  $("#signature").hover(function(){
+    $(this).css('cursor', 'pointer');
+  })
+
 });
