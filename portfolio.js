@@ -37,14 +37,14 @@ $(document).ready(function(){
   $(".backbutton").click(function(){
     fade_pages_out("slow");
     setTimeout(function(){
-    window.location.replace("http://joshuahudelson.com/portfolio.html");
+    window.location.href = "http://joshuahudelson.com/portfolio.html";
   }, 1000);
   });
 
   $("#signature").click(function(){
     fade_pages_out("slow");
     setTimeout(function(){
-    window.location.replace("http://joshuahudelson.com/");
+    window.location.href = "http://joshuahudelson.com/";
   }, 1000);
   })
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
   });
 
   $("#BELLA").click(function(){
-    window.open("https://bellagames.org/");
+    window.location.href = "https://bellagames.org/";
   });
 
   $(".backbutton").hover(function(){
